@@ -168,14 +168,12 @@ namespace Learn_Password
 			this.Icon = new Icon( this.GetType().Assembly.GetManifestResourceStream( "Learn_Password.App.ico"));
 			this.fniIcon.Icon = new Icon( this.GetType().Assembly.GetManifestResourceStream( "Learn_Password.App.ico"));
 			this.ftimTimer.Interval = (int)(new TimeSpan(0,1,0,0,0)).TotalMilliseconds;
-//			this.ftimTimer.Interval = (int)(new TimeSpan(0,0,0,5,0)).TotalMilliseconds;
 
 			MenuItem[] menuItems = new MenuItem[3];
 			menuItems[2] = new MenuItem( "Exit", new EventHandler( this.ExitSelected));
 			menuItems[2].DefaultItem = true;
 			menuItems[1] = new MenuItem( "Stop Timer", new EventHandler( this.StopSelected));
 			menuItems[0] = new MenuItem( "Start Timer", new EventHandler( this.StartSelected));
-			//menuItems[0].Visible = false;
 
 			ContextMenu notifyiconMenu = new ContextMenu( menuItems);
 			fniIcon.ContextMenu = notifyiconMenu;
