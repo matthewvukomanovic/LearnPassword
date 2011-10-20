@@ -66,6 +66,7 @@ namespace Learn_Password
                 this.ShowInTaskbar = true;
             }
             this.BringToFront();
+            this.tbOriginalPassword.Focus();
             TimerStop();
         }
 
