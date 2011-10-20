@@ -66,7 +66,7 @@ namespace Learn_Password
                 this.ShowInTaskbar = true;
             }
             this.BringToFront();
-            this.tbOriginalPassword.Focus();
+            this.controlPassword.Focus();
             TimerStop();
         }
 
@@ -180,11 +180,11 @@ namespace Learn_Password
         {
             get
             {
-                return this.tbOriginalPassword.Text;
+                return this.controlPassword.Text;
             }
             set
             {
-                this.tbOriginalPassword.Text = value;
+                this.controlPassword.Text = value;
             }
         }
 
@@ -192,11 +192,11 @@ namespace Learn_Password
         {
             get
             {
-                return this.tbOriginalPassword.PasswordChar;
+                return this.controlPassword.PasswordChar;
             }
             set
             {
-                this.tbOriginalPassword.PasswordChar = value;
+                this.controlPassword.PasswordChar = value;
             }
         }
 
@@ -204,11 +204,11 @@ namespace Learn_Password
         {
             get
             {
-                return this.btnSet.Text;
+                return this.controlUseValue.Text;
             }
             set
             {
-                this.btnSet.Text = value;
+                this.controlUseValue.Text = value;
             }
         }
 
