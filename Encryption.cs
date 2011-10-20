@@ -6,10 +6,11 @@ namespace Learn_Password
 	{
 		public static string Encrypt( string input)
 		{
-			if( input == null)
+            if (string.IsNullOrEmpty(input))
 			{
-				throw new System.NullReferenceException( "Passed a null reference");
+                return string.Empty;
 			}
+
 			System.Random rnd = new System.Random();
 			byte ri = (byte)rnd.Next( 0,256);
 			string s = ri.ToString( "X2");
@@ -23,13 +24,14 @@ namespace Learn_Password
 
 		public static string Decrypt( string input)
 		{
-			string ret = null;
-			if( input == null)
+            if (string.IsNullOrEmpty(input))
+            {
+                return string.Empty;
+            }
+            
+            if( input.Length % 2 == 0)
 			{
-				throw new System.NullReferenceException( "Passed a null reference");
-			}
-			if( input.Length > 0 && input.Length % 2 == 0)
-			{
+                string ret = null;
 				string ris = input.Substring( 0,2);
 				byte ri = byte.Parse( ris, System.Globalization.NumberStyles.HexNumber);
 				ret = "";
@@ -38,12 +40,12 @@ namespace Learn_Password
 					byte ascii = byte.Parse(input.Substring( i,2), System.Globalization.NumberStyles.HexNumber);
 					ret+=((char)(((byte)~ascii)^ri)).ToString();
 				}
+                return ret;
 			}
 			else
 			{
 				throw new System.Exception( "The passed in string to decrypt is an incorrect length or empty");
 			}
-			return ret;
 		}
 	}
 }
