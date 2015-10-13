@@ -10,6 +10,7 @@ namespace Learn_Password.Interfaces
         string Password { get; set; }
         char PasswordChar { get; set; }
         string Prompt { get; set; }
+        string Title { get; set; }
 
         void Deploy(IUIHandler handler);
 

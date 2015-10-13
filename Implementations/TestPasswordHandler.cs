@@ -31,20 +31,23 @@ namespace Learn_Password.Implementations
             get { return _storedPassword; }
             set
             {
-                _storedPassword = Encryption.Encrypt(value);
+                _storedPassword = Hashing.GetHashSha256(value);
             }
         }
 
         #endregion
+
+        public string Title { get; set; }
 
         public TestPasswordHandler()
         {
             StoredPassword = null;
         }
 
-        public TestPasswordHandler(string initialPasswordValue)
+        public TestPasswordHandler(string initialPasswordValue, string title)
         {
             StoredPassword = initialPasswordValue;
+            Title = title;
         }
 
         public override void Deploy(Interfaces.IPasswordInterface ui, Interfaces.IUIHandler current)
@@ -53,6 +56,12 @@ namespace Learn_Password.Implementations
 
             ui.Password = string.Empty;
             ui.PasswordChar = '*';
+            string title = "Learn Password";
+            if (!string.IsNullOrWhiteSpace(Title))
+            {
+                title += " for " + Title;
+            }
+            ui.Title = title;
             ui.Prompt = "Test Password";
             ui.HideUI();
             CheckChangeIntervalCount(ui);
@@ -67,7 +76,7 @@ namespace Learn_Password.Implementations
             }
             else
             {
-                if (passwordText == Encryption.Decrypt(StoredPassword))
+                if (Hashing.GetHashSha256(passwordText) == StoredPassword)
                 {
                     ui.Password = null;
                     ui.HideUI();
@@ -78,6 +87,7 @@ namespace Learn_Password.Implementations
                     SuccessfulCount = 0;
                     TextDisplay.ShowDialog("Password Entered Is Not The Same Password");
                 }
+                CheckChangeIntervalCount(ui);
                 
             }
         }

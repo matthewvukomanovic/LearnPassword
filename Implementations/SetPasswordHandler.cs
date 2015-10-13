@@ -27,8 +27,15 @@ namespace Learn_Password.Implementations
             }
             else
             {
+                ui.Password = string.Empty;
                 ui.HideUI();
-                ui.Deploy(new TestPasswordHandler(value));
+                var title = TextDisplay.GetTextDialog("Title for the password", "Password Title", string.Empty, true);
+                title = title.Trim();
+                if (title == string.Empty)
+                {
+                    title = null;
+                }
+                ui.Deploy(new TestPasswordHandler(value, title));
             }
         }
     }

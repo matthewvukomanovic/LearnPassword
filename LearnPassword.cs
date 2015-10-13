@@ -212,6 +212,22 @@ namespace Learn_Password
             }
         }
 
+        public string Title
+        {
+            get { return this.Text; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    this.Text = "Learn Password";
+                }
+                else
+                {
+                    this.Text = value;    
+                }
+            }
+        }
+
         public void Deploy(IUIHandler handler)
         {
             IUIHandler previous = CurrentHandler;

@@ -48,7 +48,7 @@
             // controlUseValue
             // 
             this.controlUseValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlUseValue.Location = new System.Drawing.Point(243, 8);
+            this.controlUseValue.Location = new System.Drawing.Point(238, 8);
             this.controlUseValue.Name = "controlUseValue";
             this.controlUseValue.Size = new System.Drawing.Size(96, 24);
             this.controlUseValue.TabIndex = 6;
@@ -61,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.controlPassword.Location = new System.Drawing.Point(11, 8);
             this.controlPassword.Name = "controlPassword";
-            this.controlPassword.Size = new System.Drawing.Size(224, 20);
+            this.controlPassword.Size = new System.Drawing.Size(219, 20);
             this.controlPassword.TabIndex = 5;
             this.controlPassword.Text = "Enter Password";
             this.controlPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbOriginalPassword_KeyUp);
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 37);
+            this.ClientSize = new System.Drawing.Size(339, 37);
             this.Controls.Add(this.controlUseValue);
             this.Controls.Add(this.controlPassword);
             this.Name = "LearnPassword";
